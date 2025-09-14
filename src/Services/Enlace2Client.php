@@ -17,14 +17,24 @@ class Enlace2Client
     protected $apiKey;
     protected $baseUrl;
 
-    public function __construct($apiKey, $baseUrl = 'https://enlace2.com/api/')
+    public function __construct($apiKey, $baseUrl = 'https://enlace2.com/api/', $timeout = 30)
     {
         $this->apiKey = $apiKey;
         $this->baseUrl = rtrim($baseUrl, '/') . '/';
 
+        // Try to get config from Laravel if available, otherwise use default
+        $timeoutValue = $timeout;
+        if (function_exists('config') && function_exists('app')) {
+            try {
+                $timeoutValue = config('enlace2.timeout', $timeout);
+            } catch (\Exception $e) {
+                $timeoutValue = $timeout;
+            }
+        }
+
         $this->client = new Client([
             'base_uri' => $this->baseUrl,
-            'timeout' => config('enlace2.timeout', 30),
+            'timeout' => $timeoutValue,
             'headers' => [
                 'Authorization' => 'Bearer ' . $this->apiKey,
                 'Accept' => 'application/json',
