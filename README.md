@@ -1,6 +1,24 @@
 # Enlace2 Laravel Package
 
-Un package de Laravel para integrar fácilmente el servicio de acortamiento de URLs de Enlace2 en tus aplicaciones Laravel.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/enlace2/laravel-url-shortener.svg?style=flat-square)](https://packagist.org/packages/enlace2/laravel-url-shortener)
+[![Total Downloads](https://img.shields.io/packagist/dt/enlace2/laravel-url-shortener.svg?style=flat-square)](https://packagist.org/packages/enlace2/laravel-url-shortener)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/RenatoAscencio/enlace2/run-tests?label=tests)](https://github.com/RenatoAscencio/enlace2/actions?query=workflow%3Arun-tests+branch%3Amain)
+
+Un package completo de Laravel para integrar fácilmente el servicio de acortamiento de URLs de Enlace2 en tus aplicaciones Laravel. Incluye soporte para acortamiento de URLs, códigos QR, campañas, canales y todas las funcionalidades avanzadas de la API de Enlace2.
+
+## Funcionalidades
+
+- ✅ **Acortamiento de URLs** con opciones personalizadas
+- ✅ **Códigos QR** dinámicos y personalizables
+- ✅ **Campañas** para organizar tus enlaces
+- ✅ **Canales** para segmentación avanzada
+- ✅ **Geo-targeting** y **Device targeting**
+- ✅ **Protección con contraseña** y **fechas de expiración**
+- ✅ **Tracking detallado** de clicks y estadísticas
+- ✅ **Manejo robusto de errores** y rate limiting
+- ✅ **Facade de Laravel** para fácil uso
+- ✅ **Configuración flexible**
+- ✅ **Tests completos** (30+ tests)
 
 ## Instalación
 
@@ -9,6 +27,8 @@ Puedes instalar el package vía Composer:
 ```bash
 composer require enlace2/laravel-url-shortener
 ```
+
+El package se auto-registra automáticamente en Laravel 5.5+.
 
 ## Configuración
 
@@ -202,7 +222,28 @@ Este package es software de código abierto licenciado bajo la [Licencia MIT](LI
 - Issues: Reporta problemas en GitHub
 - Email: Contacta el soporte de Enlace2
 
+## Testing
+
+Ejecuta los tests con:
+
+```bash
+composer test
+```
+
+Para generar coverage:
+
+```bash
+composer test-coverage
+```
+
 ## Changelog
 
-### v1.0.0
+### v1.0.1 (2025-01-XX)
+- Añadido soporte completo para uso standalone (fuera de Laravel)
+- Suite de tests comprensiva (30+ tests)
+- Ejemplos de uso y documentación mejorada
+- Correcciones de compatibilidad PHP 8.4
+- Manejo robusto de errores mejorado
+
+### v1.0.0 (2025-01-XX)
 - Release inicial con soporte completo para la API de Enlace2

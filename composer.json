@@ -1,12 +1,16 @@
 {
     "name": "enlace2/laravel-url-shortener",
-    "description": "Laravel package for Enlace2 URL shortener service integration",
+    "description": "Laravel package for Enlace2 URL shortener service integration - Complete API wrapper with support for links, QR codes, campaigns, and channels",
+    "keywords": ["laravel", "url-shortener", "enlace2", "qr-codes", "campaigns", "api", "php"],
+    "homepage": "https://github.com/RenatoAscencio/enlace2",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Renato Ascencio",
-            "email": "your-email@example.com"
+            "email": "your-email@example.com",
+            "homepage": "https://github.com/RenatoAscencio",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -38,6 +42,21 @@
             }
         }
     },
-    "minimum-stability": "dev",
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "support": {
+        "issues": "https://github.com/RenatoAscencio/enlace2/issues",
+        "source": "https://github.com/RenatoAscencio/enlace2",
+        "docs": "https://github.com/RenatoAscencio/enlace2#readme"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/RenatoAscencio"
+        }
+    ],
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
