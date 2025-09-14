@@ -1,0 +1,43 @@
+{
+    "name": "enlace2/laravel-url-shortener",
+    "description": "Laravel package for Enlace2 URL shortener service integration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Renato Ascencio",
+            "email": "your-email@example.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "phpunit/phpunit": "^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Enlace2\\LaravelUrlShortener\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Enlace2\\LaravelUrlShortener\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Enlace2\\LaravelUrlShortener\\Enlace2ServiceProvider"
+            ],
+            "aliases": {
+                "Enlace2": "Enlace2\\LaravelUrlShortener\\Facades\\Enlace2"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
