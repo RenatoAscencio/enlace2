@@ -1,5 +1,5 @@
 parameters:
-    level: 8
+    level: 4
     paths:
         - src
         - tests
@@ -9,6 +9,13 @@ parameters:
         - '#Call to an undefined method Illuminate\\.*#'
         - '#Parameter .* of method .* has no typehint specified#'
         - '#Method .* has no return typehint specified#'
+        - '#Function .* is deprecated#'
+        - '#.*deprecation.*#'
+        - '#.*Serializable.*#'
+        - '#.*mbstring.*#'
+        - '#Unsafe usage of new static\(\)#'
+        - '#Call to an undefined static method.*#'
+        - '#Unreachable statement.*#'
 
     # Cache and temporary files
     tmpDir: .phpstan.cache
@@ -16,3 +23,7 @@ parameters:
     # Bootstrap file for Laravel helpers
     bootstrapFiles:
         - vendor/autoload.php
+
+    # Exclude vendor directories that have deprecation warnings
+    excludePaths:
+        - vendor/

@@ -4,13 +4,13 @@ namespace Enlace2\LaravelUrlShortener\Models;
 
 class Campaign
 {
-    public $id;
-    public $name;
-    public $description;
-    public $color;
-    public $date;
+    public ?int $id = null;
+    public ?string $name = null;
+    public ?string $description = null;
+    public ?string $color = null;
+    public ?string $date = null;
 
-    public function __construct($data = [])
+    public function __construct(array $data = [])
     {
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
@@ -19,12 +19,12 @@ class Campaign
         }
     }
 
-    public static function fromArray($data)
+    public static function fromArray(array $data): self
     {
         return new static($data);
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return get_object_vars($this);
     }
