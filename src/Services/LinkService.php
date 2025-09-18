@@ -2,8 +2,12 @@
 
 namespace Enlace2\LaravelUrlShortener\Services;
 
+use Enlace2\LaravelUrlShortener\Traits\ValidatesInput;
+use Enlace2\LaravelUrlShortener\Traits\CachesResponses;
+
 class LinkService
 {
+    use ValidatesInput, CachesResponses;
     protected $client;
 
     public function __construct($client)
@@ -13,7 +17,11 @@ class LinkService
 
     public function all()
     {
-        return $this->client->makeRequest('GET', 'urls');
+        $cacheKey = $this->generateCacheKey('GET', 'urls');
+
+        return $this->getCachedResponse($cacheKey, function () {
+            return $this->client->makeRequest('GET', 'urls');
+        });
     }
 
     public function get($id)
@@ -23,6 +31,10 @@ class LinkService
 
     public function create($data)
     {
+        if (isset($data['url'])) {
+            $this->validateUrl($data['url']);
+        }
+
         return $this->client->makeRequest('POST', 'url/add', $data);
     }
 
@@ -38,6 +50,7 @@ class LinkService
 
     public function shorten($url, $options = [])
     {
+        $this->validateUrl($url);
         $data = array_merge(['url' => $url], $options);
         return $this->create($data);
     }

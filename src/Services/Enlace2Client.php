@@ -10,9 +10,12 @@ use Enlace2\LaravelUrlShortener\Services\LinkService;
 use Enlace2\LaravelUrlShortener\Services\QrService;
 use Enlace2\LaravelUrlShortener\Services\CampaignService;
 use Enlace2\LaravelUrlShortener\Services\ChannelService;
+use Enlace2\LaravelUrlShortener\Traits\LogsActivity;
+use Enlace2\LaravelUrlShortener\Traits\CachesResponses;
 
 class Enlace2Client
 {
+    use LogsActivity, CachesResponses;
     protected $client;
     protected $apiKey;
     protected $baseUrl;
@@ -45,6 +48,8 @@ class Enlace2Client
 
     public function makeRequest($method, $endpoint, $data = [])
     {
+        $this->logRequest($method, $endpoint, $data);
+
         try {
             $options = [];
             if (!empty($data)) {
@@ -53,11 +58,14 @@ class Enlace2Client
 
             $response = $this->client->request($method, $endpoint, $options);
             $body = json_decode($response->getBody()->getContents(), true);
+            $statusCode = $response->getStatusCode();
 
-            if ($response->getStatusCode() >= 400) {
+            $this->logResponse($method, $endpoint, $body, $statusCode);
+
+            if ($statusCode >= 400) {
                 throw new ApiException(
                     $body['message'] ?? 'API Error',
-                    $response->getStatusCode(),
+                    $statusCode,
                     $body
                 );
             }
@@ -65,6 +73,8 @@ class Enlace2Client
             return $body;
 
         } catch (GuzzleException $e) {
+            $this->logError($method, $endpoint, $e);
+
             if ($e->getCode() === 429) {
                 throw new RateLimitException('Rate limit exceeded', 429);
             }

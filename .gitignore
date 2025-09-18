@@ -14,3 +14,8 @@ yarn-error.log
 /coverage
 .DS_Store
 phpunit.xml.bak
+.phpunit.cache
+.php-cs-fixer.cache
+.phpcs.cache
+.phpstan.cache
+.php_cs.cache
