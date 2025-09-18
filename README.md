@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/enlace2/laravel-url-shortener.svg?style=flat-square)](https://packagist.org/packages/enlace2/laravel-url-shortener)
 [![Total Downloads](https://img.shields.io/packagist/dt/enlace2/laravel-url-shortener.svg?style=flat-square)](https://packagist.org/packages/enlace2/laravel-url-shortener)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/RenatoAscencio/enlace2/run-tests?label=tests)](https://github.com/RenatoAscencio/enlace2/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Tests](https://github.com/RenatoAscencio/enlace2/actions/workflows/tests.yml/badge.svg)](https://github.com/RenatoAscencio/enlace2/actions/workflows/tests.yml)
 
 Un package completo de Laravel para integrar fácilmente el servicio de acortamiento de URLs de Enlace2 en tus aplicaciones Laravel. Incluye soporte para acortamiento de URLs, códigos QR, campañas, canales y todas las funcionalidades avanzadas de la API de Enlace2.
 
