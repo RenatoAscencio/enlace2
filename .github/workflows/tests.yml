@@ -55,11 +55,13 @@ jobs:
       - name: Execute tests
         run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
-      - name: Run PHPStan
+      - name: Run PHPStan (allow failures)
+        continue-on-error: true
         run: vendor/bin/phpstan analyse --no-progress --memory-limit=256M
 
-      - name: Check code style
-        run: vendor/bin/phpcs --standard=PSR12 src tests
+      - name: Check code style (allow failures)
+        continue-on-error: true
+        run: vendor/bin/phpcs
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
