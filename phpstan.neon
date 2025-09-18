@@ -1,0 +1,18 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+
+    # Laravel specific ignores
+    ignoreErrors:
+        - '#Call to an undefined method Illuminate\\.*#'
+        - '#Parameter .* of method .* has no typehint specified#'
+        - '#Method .* has no return typehint specified#'
+
+    # Cache and temporary files
+    tmpDir: .phpstan.cache
+
+    # Bootstrap file for Laravel helpers
+    bootstrapFiles:
+        - vendor/autoload.php

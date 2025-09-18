@@ -19,3 +19,4 @@ phpunit.xml.bak
 .phpcs.cache
 .phpstan.cache
 .php_cs.cache
+phpstan.neon.dist
