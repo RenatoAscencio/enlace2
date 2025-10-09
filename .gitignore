@@ -1,22 +1,46 @@
+# Dependencies
 /vendor
 /node_modules
 composer.lock
 package-lock.json
+
+# Environment files
 .env
 .env.backup
-.phpunit.result.cache
+.env.local
+.env.*.local
+
+# Laravel
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# IDEs
 /.idea
-/.vscode
+# VSCode - Keep our configuration but ignore local settings
+.vscode/settings.local.json
+.vscode/*.local.*
+
+# Testing & Coverage
 /coverage
-.DS_Store
-phpunit.xml.bak
+.phpunit.result.cache
 .phpunit.cache
+
+# Code Quality Cache
 .php-cs-fixer.cache
 .phpcs.cache
 .phpstan.cache
 .php_cs.cache
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+phpunit.xml.bak
 phpstan.neon.dist
+
+# Logs
+*.log

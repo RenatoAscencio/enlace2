@@ -1,0 +1,160 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run PHPUnit Tests",
+      "type": "shell",
+      "command": "composer test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run PHPUnit with Coverage",
+      "type": "shell",
+      "command": "composer test-coverage",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run PHPStan Analysis",
+      "type": "shell",
+      "command": "composer phpstan",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Check Code Style",
+      "type": "shell",
+      "command": "composer cs-check",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Fix Code Style",
+      "type": "shell",
+      "command": "composer cs-fix",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Quality Checks (All)",
+      "type": "shell",
+      "command": "composer quality",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Install Dependencies",
+      "type": "shell",
+      "command": "composer install",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Update Dependencies",
+      "type": "shell",
+      "command": "composer update",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Validate Composer",
+      "type": "shell",
+      "command": "composer validate",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Example - Basic Usage",
+      "type": "shell",
+      "command": "php examples/basic_usage.php ${input:apiKey}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Verify Setup",
+      "type": "shell",
+      "command": "./.vscode/verify-setup.sh",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "apiKey",
+      "type": "promptString",
+      "description": "Enter your Enlace2 API Key",
+      "default": ""
+    }
+  ]
+}

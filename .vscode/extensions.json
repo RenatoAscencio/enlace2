@@ -1,0 +1,63 @@
+{
+  "recommendations": [
+    // PHP Esenciales
+    "bmewburn.vscode-intelephense-client",
+    "xdebug.php-debug",
+    "zobo.php-intellisense",
+
+    // Laravel Específico
+    "amirrizki.laravel-extra-intellisense",
+    "onecentlin.laravel-blade",
+    "onecentlin.laravel5-snippets",
+    "codingyu.laravel-goto-view",
+
+    // Calidad de Código PHP
+    "wongjn.php-sniffer",
+    "sanderronde.phpstan-vscode",
+    "persoderlind.vscode-phpcbf",
+
+    // Testing
+    "emallin.phpunit",
+    "recca0120.vscode-phpunit",
+
+    // Composer
+    "ikappas.composer",
+    "devsense.composer-php-vscode",
+
+    // Git
+    "eamodio.gitlens",
+    "donjayamanne.githistory",
+    "mhutchie.git-graph",
+
+    // Formateo y Estilo
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+
+    // Utilidades Generales
+    "streetsidesoftware.code-spell-checker",
+    "wayou.vscode-todo-highlight",
+    "aaron-bond.better-comments",
+    "gruntfuggly.todo-tree",
+
+    // Markdown (para documentación)
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+
+    // JSON
+    "zainchen.json",
+
+    // IntelliSense adicional
+    "christian-kohler.path-intellisense",
+    "visualstudioexptteam.vscodeintellicode",
+
+    // Docker (si lo usas)
+    "ms-azuretools.vscode-docker",
+
+    // REST Client (para probar API)
+    "humao.rest-client"
+  ],
+  "unwantedRecommendations": [
+    "felixfbecker.php-intellisense",
+    "felixfbecker.php-debug"
+  ]
+}

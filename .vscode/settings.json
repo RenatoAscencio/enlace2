@@ -1,0 +1,249 @@
+{
+  // PHP Configuration
+  "php.suggest.basic": false,
+  "php.validate.enable": true,
+  "php.validate.run": "onType",
+
+  // Intelephense (recomendado sobre el default PHP IntelliSense)
+  "intelephense.telemetry.enabled": false,
+  "intelephense.format.enable": true,
+  "intelephense.completion.triggerParameterHints": true,
+  "intelephense.completion.insertUseDeclaration": true,
+  "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": false,
+  "intelephense.files.maxSize": 5000000,
+  "intelephense.files.exclude": [
+    "**/.git/**",
+    "**/.svn/**",
+    "**/.hg/**",
+    "**/CVS/**",
+    "**/.DS_Store/**",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**/{Tests,tests}/**",
+    "**/.history/**",
+    "**/vendor/**/vendor/**"
+  ],
+
+  // PHPStan
+  "phpstan.enabled": true,
+  "phpstan.level": "4",
+  "phpstan.configFile": "${workspaceFolder}/phpstan.neon",
+  "phpstan.path": "${workspaceFolder}/vendor/bin/phpstan",
+  "phpstan.enableStatusBar": true,
+  "phpstan.enableLanguageServer": false,
+
+  // PHP CS Fixer / PHPCS
+  "phpSniffer.standard": "${workspaceFolder}/.phpcs.xml",
+  "phpSniffer.run": "onSave",
+  "phpSniffer.executablesFolder": "${workspaceFolder}/vendor/bin/",
+  "phpSniffer.autoExecutable": false,
+  "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
+  "php-cs-fixer.onsave": false,
+  "php-cs-fixer.rules": "@PSR12",
+
+  // PHPUnit
+  "phpunit.phpunit": "${workspaceFolder}/vendor/bin/phpunit",
+  "phpunit.args": [
+    "--configuration",
+    "${workspaceFolder}/phpunit.xml"
+  ],
+  "phpunit.showAfterExecution": "always",
+  "phpunit.driverPriority": [
+    "Command",
+    "Path",
+    "Composer",
+    "Phar",
+    "Ssh",
+    "GlobalPhpunit"
+  ],
+
+  // Better PHPUnit (extensión calebporzio.better-phpunit)
+  "better-phpunit.phpunitBinary": "${workspaceFolder}/vendor/bin/phpunit",
+  "better-phpunit.commandSuffix": null,
+  "better-phpunit.xmlConfigFilepath": "${workspaceFolder}/phpunit.xml",
+
+  // Files
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/vendor": false,
+    "**/node_modules": true,
+    "**/.phpunit.cache": true,
+    "**/.phpstan.cache": true,
+    "**/coverage": true
+  },
+
+  "files.watcherExclude": {
+    "**/vendor/**": true,
+    "**/node_modules/**": true,
+    "**/.phpstan.cache/**": true,
+    "**/.phpunit.cache/**": true
+  },
+
+  "files.associations": {
+    "*.php": "php",
+    ".phpcs.xml": "xml",
+    "phpstan.neon": "yaml"
+  },
+
+  // Search
+  "search.exclude": {
+    "**/vendor": true,
+    "**/node_modules": true,
+    "**/coverage": true,
+    "**/.phpstan.cache": true,
+    "**/.phpunit.cache": true,
+    "**/composer.lock": true
+  },
+
+  // Editor
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Language-specific settings
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [120]
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+
+  // Git
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  // GitLens
+  "gitlens.codeLens.enabled": true,
+  "gitlens.currentLine.enabled": true,
+
+  // Terminal
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+
+  // Todo Highlights
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "#ff6b6b",
+      "backgroundColor": "transparent",
+      "overviewRulerColor": "#ff6b6b"
+    },
+    {
+      "text": "FIXME:",
+      "color": "#feca57",
+      "backgroundColor": "transparent",
+      "overviewRulerColor": "#feca57"
+    },
+    {
+      "text": "NOTE:",
+      "color": "#48dbfb",
+      "backgroundColor": "transparent"
+    }
+  ],
+
+  // Better Comments
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+  // Spell Checker
+  "cSpell.words": [
+    "Enlace",
+    "enlace",
+    "Guzzle",
+    "phpunit",
+    "phpstan",
+    "phpcbf",
+    "phpcs",
+    "testbench",
+    "Ascencio",
+    "Renato"
+  ],
+  "cSpell.language": "en,es",
+
+  // Prettier
+  "prettier.tabWidth": 4,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+
+  // Breadcrumbs
+  "breadcrumbs.enabled": true,
+
+  // Minimap
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 120
+}

@@ -1,0 +1,165 @@
+{
+  "PHP Class with Namespace": {
+    "prefix": "phpclass",
+    "body": [
+      "<?php",
+      "",
+      "namespace Enlace2\\LaravelUrlShortener\\${1:Namespace};",
+      "",
+      "class ${2:ClassName}",
+      "{",
+      "    ${3:// Your code here}",
+      "}",
+      ""
+    ],
+    "description": "Create a PHP class with Enlace2 namespace"
+  },
+
+  "PHP Service Class": {
+    "prefix": "phpservice",
+    "body": [
+      "<?php",
+      "",
+      "namespace Enlace2\\LaravelUrlShortener\\Services;",
+      "",
+      "use Enlace2\\LaravelUrlShortener\\Traits\\ValidatesInput;",
+      "use Enlace2\\LaravelUrlShortener\\Traits\\CachesResponses;",
+      "",
+      "class ${1:ServiceName}Service",
+      "{",
+      "    use ValidatesInput, CachesResponses;",
+      "",
+      "    protected \\$client;",
+      "",
+      "    public function __construct(\\$client)",
+      "    {",
+      "        \\$this->client = \\$client;",
+      "    }",
+      "",
+      "    ${2:// Your methods here}",
+      "}",
+      ""
+    ],
+    "description": "Create a new service class for Enlace2"
+  },
+
+  "PHPUnit Test Method": {
+    "prefix": "phptest",
+    "body": [
+      "public function test_${1:test_name}()",
+      "{",
+      "    ${2:// Arrange}",
+      "    ${3}",
+      "",
+      "    ${4:// Act}",
+      "    ${5}",
+      "",
+      "    ${6:// Assert}",
+      "    \\$this->assert${7:Equals}(${8:expected}, ${9:actual});",
+      "}",
+      ""
+    ],
+    "description": "Create a PHPUnit test method"
+  },
+
+  "API Request Method": {
+    "prefix": "apirequest",
+    "body": [
+      "public function ${1:methodName}(${2:\\$id})",
+      "{",
+      "    ${3:// Add validation if needed}",
+      "    ${4}",
+      "",
+      "    return \\$this->client->makeRequest(",
+      "        '${5|GET,POST,PUT,DELETE|}',",
+      "        '${6:endpoint}',",
+      "        ${7:[]}",
+      "    );",
+      "}",
+      ""
+    ],
+    "description": "Create an API request method"
+  },
+
+  "Try-Catch API Exception": {
+    "prefix": "trycatch-api",
+    "body": [
+      "try {",
+      "    ${1:// Your API call}",
+      "    \\$result = Enlace2::${2:links}()->${3:shorten}(${4});",
+      "} catch (RateLimitException \\$e) {",
+      "    ${5:// Handle rate limit}",
+      "} catch (ApiException \\$e) {",
+      "    ${6:// Handle API error}",
+      "    \\$code = \\$e->getCode();",
+      "    \\$response = \\$e->getResponse();",
+      "}"
+    ],
+    "description": "Try-catch block for API exceptions"
+  },
+
+  "Validation Method": {
+    "prefix": "phpvalidation",
+    "body": [
+      "protected function validate${1:EntityName}(${2:array \\$data}): void",
+      "{",
+      "    if (empty(\\$data['${3:field}'])) {",
+      "        throw new ApiException('${4:Field} is required', 400);",
+      "    }",
+      "",
+      "    ${5:// Add more validation}",
+      "}",
+      ""
+    ],
+    "description": "Create a validation method"
+  },
+
+  "Enlace2 Shorten URL": {
+    "prefix": "enlace2-shorten",
+    "body": [
+      "\\$result = Enlace2::links()->shorten('${1:https://example.com}', [",
+      "    'custom' => '${2:custom-alias}',",
+      "    'password' => '${3:password}',",
+      "    'expiry' => '${4:2024-12-31 23:59:59}'",
+      "]);"
+    ],
+    "description": "Shorten URL with Enlace2"
+  },
+
+  "Enlace2 Create QR": {
+    "prefix": "enlace2-qr",
+    "body": [
+      "\\$qr = Enlace2::qr()->create([",
+      "    'data' => '${1:https://example.com}',",
+      "    'size' => ${2:200},",
+      "    'name' => '${3:My QR Code}'",
+      "]);"
+    ],
+    "description": "Create QR code with Enlace2"
+  },
+
+  "Enlace2 Create Campaign": {
+    "prefix": "enlace2-campaign",
+    "body": [
+      "\\$campaign = Enlace2::campaigns()->create([",
+      "    'name' => '${1:Campaign Name}',",
+      "    'description' => '${2:Campaign Description}'",
+      "]);"
+    ],
+    "description": "Create campaign with Enlace2"
+  },
+
+  "DocBlock Method": {
+    "prefix": "phpdoc",
+    "body": [
+      "/**",
+      " * ${1:Description}",
+      " *",
+      " * @param ${2:type} \\$${3:param} ${4:Description}",
+      " * @return ${5:type} ${6:Description}",
+      " * @throws ${7:Exception} ${8:Description}",
+      " */"
+    ],
+    "description": "Create a PHP DocBlock for a method"
+  }
+}
