@@ -1,6 +1,6 @@
 {
     "name": "enlace2/laravel-url-shortener",
-    "description": "Laravel package for Enlace2 URL shortener service integration - Complete API wrapper with support for links, QR codes, campaigns, and channels",
+    "description": "Laravel package for Enlace2 URL shortener service integration - Complete API wrapper with support for links, QR codes, campaigns, channels, domains, pixels, and overlays",
     "keywords": ["laravel", "url-shortener", "enlace2", "qr-codes", "campaigns", "api", "php"],
     "homepage": "https://github.com/RenatoAscencio/enlace2",
     "type": "library",
