@@ -37,7 +37,7 @@ class ChannelServiceTest extends TestCase
     {
         $client = $this->createMock(Enlace2Client::class);
         $client->method('makeRequest')
-            ->with('POST', 'channel/1/assign/url/123')
+            ->with('POST', 'channel/1/assign', ['type' => 'url', 'item_id' => 123])
             ->willReturn(['success' => true]);
 
         $service = new ChannelService($client);

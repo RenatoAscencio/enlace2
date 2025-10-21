@@ -38,7 +38,7 @@ class CampaignServiceTest extends TestCase
     {
         $client = $this->createMock(Enlace2Client::class);
         $client->method('makeRequest')
-            ->with('POST', 'campaign/1/assign/123')
+            ->with('POST', 'campaign/1/assign', ['link_id' => 123])
             ->willReturn(['success' => true]);
 
         $service = new CampaignService($client);
