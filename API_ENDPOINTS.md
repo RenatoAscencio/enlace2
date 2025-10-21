@@ -687,13 +687,13 @@ HTTP/1.1 429 Too Many Requests
 
 ### Errores Comunes
 
-| Código | Mensaje | Descripción |
-|--------|---------|-------------|
-| 400 | Invalid URL | La URL proporcionada no es válida |
-| 400 | Custom alias already exists | El alias personalizado ya existe |
-| 401 | Invalid API key | La API key no es válida |
-| 404 | Resource not found | El recurso solicitado no existe |
-| 429 | Rate limit exceeded | Se alcanzó el límite de solicitudes |
+| Código | Mensaje                     | Descripción                         |
+| ------ | --------------------------- | ----------------------------------- |
+| 400    | Invalid URL                 | La URL proporcionada no es válida   |
+| 400    | Custom alias already exists | El alias personalizado ya existe    |
+| 401    | Invalid API key             | La API key no es válida             |
+| 404    | Resource not found          | El recurso solicitado no existe     |
+| 429    | Rate limit exceeded         | Se alcanzó el límite de solicitudes |
 
 ## 🔧 Ejemplos de Uso con cURL
 
