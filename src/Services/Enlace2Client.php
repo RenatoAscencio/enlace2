@@ -10,6 +10,9 @@ use Enlace2\LaravelUrlShortener\Services\LinkService;
 use Enlace2\LaravelUrlShortener\Services\QrService;
 use Enlace2\LaravelUrlShortener\Services\CampaignService;
 use Enlace2\LaravelUrlShortener\Services\ChannelService;
+use Enlace2\LaravelUrlShortener\Services\DomainService;
+use Enlace2\LaravelUrlShortener\Services\PixelService;
+use Enlace2\LaravelUrlShortener\Services\OverlayService;
 use Enlace2\LaravelUrlShortener\Traits\LogsActivity;
 use Enlace2\LaravelUrlShortener\Traits\CachesResponses;
 
@@ -71,7 +74,6 @@ class Enlace2Client
             }
 
             return $body;
-
         } catch (GuzzleException $e) {
             $this->logError($method, $endpoint, $e);
 
@@ -104,5 +106,20 @@ class Enlace2Client
     public function channels()
     {
         return new ChannelService($this);
+    }
+
+    public function domains()
+    {
+        return new DomainService($this);
+    }
+
+    public function pixels()
+    {
+        return new PixelService($this);
+    }
+
+    public function overlays()
+    {
+        return new OverlayService($this);
     }
 }

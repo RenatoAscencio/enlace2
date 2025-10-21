@@ -26,7 +26,7 @@ class LinkService
 
     public function get($id)
     {
-        return $this->client->makeRequest('GET', "url/{$id}");
+        return $this->client->makeRequest('GET', "link/{$id}");
     }
 
     public function create($data)
@@ -40,12 +40,12 @@ class LinkService
 
     public function update($id, $data)
     {
-        return $this->client->makeRequest('PUT', "url/{$id}/update", $data);
+        return $this->client->makeRequest('PUT', "link/{$id}/update", $data);
     }
 
     public function delete($id)
     {
-        return $this->client->makeRequest('DELETE', "url/{$id}/delete");
+        return $this->client->makeRequest('DELETE', "link/{$id}/delete");
     }
 
     public function shorten($url, $options = [])
